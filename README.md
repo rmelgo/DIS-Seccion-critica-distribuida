@@ -4,7 +4,7 @@
 
 # - Introducción
 
-Proyecto realizado en la asignatura de Sistemas Distribuidos del grado de Ingenieria Informática de la Universidad de Salamanca. El enunciado del proyecto se encuentra subido en el repositorio en un archivo PDF llamado <a href="https://github.com/rmelgo/ANIM-Juego-plataformas-Unity/blob/main/Enunciado%20Unity.pdf" target="_blank">*PracticaObligatoria.pdf*</a>.
+Proyecto realizado en la asignatura de Sistemas Distribuidos del grado de Ingenieria Informática de la Universidad de Salamanca. El enunciado del proyecto se encuentra subido en el repositorio en un archivo PDF llamado <a href="https://github.com/rmelgo/DIS-Seccion-critica-distribuida/blob/main/PracticaObligatoria.pdf" target="_blank">*PracticaObligatoria.pdf*</a>.
 
 El principal objetivo de este proyecto es la realización de un programa en Java que implemente el ***algoritmo de Ricart y Agrawala*** para regular el acceso a una zona de exclusión mutua la cual sera compartida por varios procesos ubicados en máquinas distintas.
 Para implementar dicho algoritmo, será necesario implementar un mecanismo ***NTP*** para calcular el desplazamiento de los relojes respecto a una maquina de referencia.
@@ -154,3 +154,33 @@ Nota: Cada uno debe configurar sus direcciones IP y no copiar las que aparecen e
 - **Paso 3**: Ejecutar ***ServicioArranque.java*** con la configuración realizada en el paso anterior y con los 6 servidores lanzando ***Servidor.java***.
    
 # - Ejemplo de ejecución
+
+Ahora, se procederá a realizar un ejemplo de ejecución del proyecto. Para ello, deben ejecutarse ***Servidor.java*** en cada uno de los servidores Tomcat y debe ejecutarse ***ServicioArranque.java*** desde la maquina de referencia pasando como parámetros las direcciones IP de las máquinas involucradas.
+
+Al ejecutar ***ServicioArranque.java*** desde la máquina de referencia se obtendrá por terminal el siguiente resultado:
+
+![Ejemplo ejecucion 1](https://github.com/rmelgo/DIS-Seccion-critica-distribuida/assets/145989723/6c5bdac1-63e9-4357-b166-b2253f6ff342)
+
+![Ejemplo ejecucion 2](https://github.com/rmelgo/DIS-Seccion-critica-distribuida/assets/145989723/a38bf42d-2eb1-40d9-9b64-da81b1e5c0f3)
+
+![Ejemplo ejecucion 3](https://github.com/rmelgo/DIS-Seccion-critica-distribuida/assets/145989723/a53d06f6-32db-4a5f-8372-fd4932a553f9)
+
+![Ejemplo ejecucion 4](https://github.com/rmelgo/DIS-Seccion-critica-distribuida/assets/145989723/a9439e9d-b38c-4487-ac53-e01ad6ec9d00)
+
+Observerse como primero se calcula la desviación con respecto a las otras 2 máquinas, después se realizan los accesos a la sección crítica, despues se vuelve a calcular la desviación con respecto a las otras 2 máquinas, se calcula la media de la desviación y se utiliza dicha desviación para comprobar el log unificado y revisar si se han producido o no violaciones en la sección crítica.
+
+Cada proceso servidor, escribe en el terminal y en log las veces que entra y sale de la sección crítica junto con el instante en el que ha entrado siguiendo la sintaxis explicada anteriormente.
+En el repositorio también se adjunta una carpeta llamada ***Resultados ejecucion*** donde se almacenan los log creados por los 6 procesos que participan en la ejecución del proyecto y el log fusionado creado por el proceso supervisor.
+
+![Ejemplo ejecucion 5](https://github.com/rmelgo/DIS-Seccion-critica-distribuida/assets/145989723/ca596504-da3f-4c47-8187-0c4c8076fcda)
+
+En ocasiones, puede darse el caso de que la desviación obtenida al principio y al final sea considerablemente diferente, de forma que el desvio en las primeros accesos a la sección crítica no es el mismo que el desvio en los últimos accesos a la sección crítica. De esta manera, el comprobador encontrará posibles violaciones en el acceso a la sección crítica, pero realmente esto se debe a una fluctuación en el desvio de los relojes de las máquinas durante el trancurso de la ejecución del proyecto.
+
+En esta ejecución, tras pasar el comprobador se han detectado x posibles violaciones de la sección crítica:
+
+<<imagen>>
+
+
+
+
+
