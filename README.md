@@ -174,11 +174,21 @@ En el repositorio también se adjunta una carpeta llamada ***Resultados ejecucio
 
 ![Ejemplo ejecucion 5](https://github.com/rmelgo/DIS-Seccion-critica-distribuida/assets/145989723/ca596504-da3f-4c47-8187-0c4c8076fcda)
 
+## Posibles inconvenientes en la ejecución de la prática
+
 En ocasiones, puede darse el caso de que la desviación obtenida al principio y al final sea considerablemente diferente, de forma que el desvio en las primeros accesos a la sección crítica no es el mismo que el desvio en los últimos accesos a la sección crítica. De esta manera, el comprobador encontrará posibles violaciones en el acceso a la sección crítica, pero realmente esto se debe a una fluctuación en el desvio de los relojes de las máquinas durante el trancurso de la ejecución del proyecto.
 
-En esta ejecución, tras pasar el comprobador se han detectado x posibles violaciones de la sección crítica:
+Por ejemplo, en esta ejecución, tras pasar el comprobador se han detectado 9 posibles violaciones de la sección crítica:
 
-<<imagen>>
+![Ejemplo ejecucion 6](https://github.com/rmelgo/DIS-Seccion-critica-distribuida/assets/145989723/dda543d0-f7e4-43a0-a38e-5121c9d10162)
+![Ejemplo ejecucion 7](https://github.com/rmelgo/DIS-Seccion-critica-distribuida/assets/145989723/4582aa3b-e2d5-47a0-b49c-d010aa2dc5ab)
+![Ejemplo ejecucion 8](https://github.com/rmelgo/DIS-Seccion-critica-distribuida/assets/145989723/d695f1a8-60f7-40a6-ac03-baaccf048acd)
+![Ejemplo ejecucion 9](https://github.com/rmelgo/DIS-Seccion-critica-distribuida/assets/145989723/5d7ecad2-ad90-43a7-a213-e985dc8a43c5)
+![Ejemplo ejecucion 10](https://github.com/rmelgo/DIS-Seccion-critica-distribuida/assets/145989723/55c9bee8-bf48-49ac-90cc-4fdfa92deb5b)
+![Ejemplo ejecucion 11](https://github.com/rmelgo/DIS-Seccion-critica-distribuida/assets/145989723/62034b10-0263-4993-9bb2-ed3e9f032f49)
+![Ejemplo ejecucion 12](https://github.com/rmelgo/DIS-Seccion-critica-distribuida/assets/145989723/acbaa9a7-5232-4a99-98cc-28362fdf2a69)
+
+Se puede observar como algun proceso entra en la sección crítica 1 o 2 milisegundos antes de que el proceso anterior abandone la sección critica. Pero esto no significa que se haya producido una violación de la seccción crítica ya que esta diferencia tan minima se debe a las pequeñas flutuaciones que se producen entre el desvio inicial y final obtenido de las otras máquinas.
 
 
 
