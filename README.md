@@ -104,7 +104,7 @@ El proyecto cuenta con los siguientes ficheros:
   - Un fichero llamado ***Peticion.java*** que actua como modelo para almacenar los valores del tiempo e identificador de proceso, los cuales conforman una petición en el algoritmo de Ricart y Agrawala.
   - Un fichero llamado ***Comprobador.java*** que incluye el código necesario para recorrer el log fusionado de los accesos a la sección crítica distribuida y determinar si se han producido violaciones de la sección crítica.
 
-- Un documento llamado ***PracticaObligatoria.pdf*** que contiene un documento en el que se detallan algunos aspectos de la estructura, la implementación y el funcionamiento del proyecto.
+- Un documento llamado ***Informe Práctica Obligatoria.pdf*** que contiene un documento en el que se detallan algunos aspectos de la estructura, la implementación y el funcionamiento del proyecto.
 
 # - Configuración del proyecto
 
